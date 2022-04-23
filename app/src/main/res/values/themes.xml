@@ -15,5 +15,7 @@
         <!--Typography-->
         <item name="android:fontFamily">@font/poppins_semibold</item>
         <item name="fontFamily">@font/poppins_semibold</item>
+
+
     </style>
 </resources>
