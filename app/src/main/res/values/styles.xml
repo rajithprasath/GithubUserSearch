@@ -21,7 +21,7 @@
     <!-- TextInputLayout -->
     <style name="SpectrumTextField" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="hintTextColor">@color/primaryColor</item>
-        <item name="hintTextAppearance">@style/SpectrumBody2</item>
+        <item name="hintTextAppearance">@style/GithubUserSearch.Body2</item>
         <item name="boxStrokeColor">@color/secondaryColor</item>
     </style>
 

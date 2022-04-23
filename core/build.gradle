@@ -1,13 +1,19 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
-    id 'kotlin-android-extensions'
     id "kotlin-kapt"
     id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs'
 }
 
 apply from: 'dependency.gradle'
+
+def keystorePropertiesFile = rootProject.file("keystore.properties")
+def keystoreProperties = new Properties()
+keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+ext {
+    base_url = keystoreProperties['BASE_URL']
+}
 
 android {
     compileSdk 31
@@ -20,6 +26,8 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        buildConfigField "String", "BASE_URL", "\"${base_url}\""
     }
 
     buildTypes {
