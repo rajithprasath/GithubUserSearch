@@ -1,4 +1,4 @@
-package com.rajith.payconiq.view.detail
+package com.rajith.payconiq.home.detail.view.fragment
 
 import androidx.fragment.app.Fragment
 

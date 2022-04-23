@@ -1,4 +1,4 @@
-package com.rajith.payconiq.view
+package com.rajith.payconiq.home
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

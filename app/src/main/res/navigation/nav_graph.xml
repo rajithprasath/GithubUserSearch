@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/searchUserFragment"
-        android:name="com.rajith.payconiq.view.search.SearchUserFragment"
+        android:name="com.rajith.payconiq.home.search.view.fragment.SearchUserFragment"
         android:label="SearchUserFragment" >
         <action
             android:id="@+id/action_searchUserFragment_to_viewDetailFragment"
@@ -14,6 +14,6 @@
     </fragment>
     <fragment
         android:id="@+id/viewDetailFragment"
-        android:name="com.rajith.payconiq.view.detail.ViewDetailFragment"
+        android:name="com.rajith.payconiq.home.detail.view.fragment.ViewDetailFragment"
         android:label="ViewDetailFragment" />
 </navigation>
