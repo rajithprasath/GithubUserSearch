@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#121e2d</color>
-    <color name="colorPrimaryDark">#121e2d</color>
+    <color name="colorPrimary">#5468FF</color>
+    <color name="colorPrimaryDark">#5468FF</color>
     <color name="colorAccent">#3bdeee</color>
     <color name="darkBlue">#0F161E</color>
     <color name="darkBlue_50">#80042f45</color>
@@ -17,7 +17,7 @@
 
     --------UI---------
     <color name="primaryColor">#030E2E</color>
-    <color name="secondaryColor">#262A34</color>
+    <color name="secondaryColor">#5468FF</color>
     <color name="assistiveColor">#5468FF</color>
     <color name="assistiveColor2">#5738DE</color>
 
