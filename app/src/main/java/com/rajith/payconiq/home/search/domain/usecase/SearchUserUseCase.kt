@@ -5,8 +5,9 @@ import com.rajith.payconiq.common.util.Resource
 import com.rajith.payconiq.home.search.domain.repository.SearchUserRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
+import javax.inject.Inject
 
-class SearchUserUseCase (
+class SearchUserUseCase @Inject constructor(
     private val searchUserRepository: SearchUserRepository
 ) {
 

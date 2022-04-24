@@ -60,8 +60,7 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //Dagger with Hilt
-    kapt "androidx.hilt:hilt-compiler:$rootProject.hiltViewModelVersion"
-    kapt "com.google.dagger:hilt-android-compiler:$rootProject.hiltVersion"
-    api "com.google.dagger:hilt-android:$rootProject.hiltVersion"
-    api "androidx.hilt:hilt-lifecycle-viewmodel:$rootProject.hiltViewModelVersion"
+    implementation("com.google.dagger:hilt-android:2.38.1")
+    kapt("com.google.dagger:hilt-android-compiler:2.38.1")
+
 }

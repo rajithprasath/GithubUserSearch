@@ -7,10 +7,12 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
+import dagger.hilt.android.components.FragmentComponent
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
-@InstallIn(ActivityComponent::class)
+@InstallIn(SingletonComponent::class)
 class SearchUserModule {
 
     @Provides
@@ -19,7 +21,6 @@ class SearchUserModule {
     }
 
     @Provides
-    @Singleton
     fun provideSearchUserUseCase(searchUserRepository: SearchUserRepository): SearchUserUseCase {
         return SearchUserUseCase(searchUserRepository)
     }

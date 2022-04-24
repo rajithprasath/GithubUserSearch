@@ -5,15 +5,35 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.rajith.payconiq.R
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import com.rajith.payconiq.databinding.FragmentSearchUserBinding
+import com.rajith.payconiq.home.search.viewmodel.SearchUserViewModel
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.flow.collectLatest
+import kotlinx.coroutines.launch
 
-class SearchUserFragment :  Fragment() {
+@AndroidEntryPoint
+class SearchUserFragment : Fragment() {
+
+    private val searchUserViewModel: SearchUserViewModel by viewModels()
+    private lateinit var binding: FragmentSearchUserBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_search_user, container, false)
+    ): View {
+        binding = FragmentSearchUserBinding.inflate(inflater, container, false)
+        searchUser()
+        return binding.root
     }
+
+    private fun searchUser() {
+        lifecycleScope.launch {
+            searchUserViewModel.searchUser().collectLatest {
+            }
+        }
+    }
+
 }
