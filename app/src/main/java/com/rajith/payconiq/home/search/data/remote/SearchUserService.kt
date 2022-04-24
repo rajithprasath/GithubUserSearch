@@ -8,5 +8,5 @@ interface SearchUserService {
 
     @GET("search/users")
     suspend fun searchUser(@Query("q") query: String,
-                           @Query("page")  pageNumber: String): UserResponse
+                           @Query("page")  pageNumber: Int = 1): UserResponse
 }
