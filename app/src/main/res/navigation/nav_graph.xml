@@ -14,6 +14,12 @@
     </fragment>
     <fragment
         android:id="@+id/viewDetailFragment"
-        android:name="com.rajith.payconiq.home.detail.view.fragment.ViewDetailFragment"
-        android:label="ViewDetailFragment" />
+        android:name="com.rajith.payconiq.home.detail.view.fragment.UserDetailFragment"
+        android:label="ViewDetailFragment">
+    <argument
+        android:name="login"
+        app:argType="string"
+        android:defaultValue="" />
+
+    </fragment>
 </navigation>

@@ -1,4 +1,4 @@
-package com.rajith.payconiq.common.util
+package com.rajith.payconiq.home.search.util
 
 class Constants {
 

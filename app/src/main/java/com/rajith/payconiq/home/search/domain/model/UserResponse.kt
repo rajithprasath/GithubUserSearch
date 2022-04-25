@@ -1,4 +1,4 @@
-package com.rajith.payconiq.common.domain.model
+package com.rajith.payconiq.home.search.domain.model
 
 data class UserResponse(
     val incomplete_results: Boolean,

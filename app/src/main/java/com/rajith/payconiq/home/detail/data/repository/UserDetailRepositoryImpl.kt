@@ -1,25 +1,26 @@
-package com.rajith.payconiq.home.search.data.repository
+package com.rajith.payconiq.home.detail.data.repository
 
-import com.rajith.payconiq.home.search.domain.model.UserResponse
 import com.rajith.payconiq.common.util.Resource
-import com.rajith.payconiq.home.search.data.remote.SearchUserService
-import com.rajith.payconiq.home.search.domain.repository.SearchUserRepository
+import com.rajith.payconiq.home.detail.data.remote.UserDetailService
+import com.rajith.payconiq.home.detail.domain.model.UserInfo
+import com.rajith.payconiq.home.detail.domain.repository.UserDetailRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 import java.io.IOException
 import javax.inject.Inject
 
-class SearchUserRepositoryImpl @Inject constructor(
-    private val api: SearchUserService
-) : SearchUserRepository {
+class UserDetailRepositoryImpl @Inject constructor(
+    private val api: UserDetailService
+) : UserDetailRepository {
 
-    override fun searchUser(searchQuery: String, pageNumber: Int): Flow<Resource<UserResponse>> = flow {
+
+    override fun getUserDetails(username: String): Flow<Resource<UserInfo>> = flow {
         emit(Resource.Loading())
-        val users: UserResponse
+        val userInfo: UserInfo
         try {
-            users = api.searchUser(query = searchQuery, pageNumber = pageNumber)
-            emit(Resource.Success(users))
+            userInfo = api.getDetails(username = username)
+            emit(Resource.Success(userInfo))
         } catch (e: HttpException) {
             emit(
                 Resource.Error(

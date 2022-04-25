@@ -1,6 +1,6 @@
 package com.rajith.payconiq.home.search.domain.repository
 
-import com.rajith.payconiq.common.domain.model.UserResponse
+import com.rajith.payconiq.home.search.domain.model.UserResponse
 import com.rajith.payconiq.common.util.Resource
 import kotlinx.coroutines.flow.Flow
 

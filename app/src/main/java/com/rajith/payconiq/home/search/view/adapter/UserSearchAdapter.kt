@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
 import com.rajith.payconiq.R
-import com.rajith.payconiq.common.domain.model.User
+import com.rajith.payconiq.home.search.domain.model.User
 import kotlinx.android.synthetic.main.item_search_user.view.*
 import java.util.*
 

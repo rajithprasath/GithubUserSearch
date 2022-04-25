@@ -8,8 +8,10 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.rajith.payconiq.common.util.Constants.Companion.SEARCH_USER_TIME_DELAY
+import com.rajith.payconiq.R
+import com.rajith.payconiq.home.search.util.Constants.Companion.SEARCH_USER_TIME_DELAY
 import com.rajith.payconiq.common.util.Resource
 import com.rajith.payconiq.databinding.FragmentSearchUserBinding
 import com.rajith.payconiq.home.search.view.adapter.UserSearchAdapter
@@ -43,6 +45,16 @@ class SearchUserFragment : Fragment() {
 
         setupRecyclerView()
         searchUser()
+
+        userSearchAdapter.setOnItemClickListener {
+            val bundle = Bundle().apply {
+                putSerializable("login", it.login)
+            }
+            findNavController().navigate(
+                R.id.action_searchUserFragment_to_viewDetailFragment,
+                bundle
+            )
+        }
     }
 
 
