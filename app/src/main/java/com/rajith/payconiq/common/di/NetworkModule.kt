@@ -1,5 +1,6 @@
 package com.rajith.payconiq.common.di
 
+import com.rajith.payconiq.home.detail.data.remote.UserDetailService
 import com.rajith.payconiq.home.search.data.remote.SearchUserService
 import dagger.Module
 import dagger.Provides
@@ -11,8 +12,14 @@ import javax.inject.Singleton
 @Module
 @InstallIn(SingletonComponent::class)
 object NetworkModule {
+
     @Provides
     @Singleton
     fun provideSearchUserService(retrofit: Retrofit): SearchUserService =
         retrofit.create(SearchUserService::class.java)
+
+    @Provides
+    @Singleton
+    fun provideUserDetailService(retrofit: Retrofit): UserDetailService =
+        retrofit.create(UserDetailService::class.java)
 }
