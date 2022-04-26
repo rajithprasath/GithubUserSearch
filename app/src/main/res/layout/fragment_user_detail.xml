@@ -69,6 +69,16 @@
                     app:navigationIcon="@drawable/ic_arrow_back"
                     app:popupTheme="@style/AppTheme.PopupOverlay">
 
+                    <ImageButton
+                        android:id="@+id/ibFav"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="?attr/actionBarItemBackground"
+                        android:padding="@dimen/size_4"
+                        android:src="@drawable/ic_favorite_border" />
+
+
                 </androidx.appcompat.widget.Toolbar>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
@@ -81,8 +91,18 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingHorizontal="@dimen/size_16"
-                android:paddingTop="@dimen/size_16">
+                android:paddingHorizontal="@dimen/size_16">
+
+                <TextView
+                    android:id="@+id/lblBio"
+                    style="@style/GithubUserSearch.Headline2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_Bio"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
 
                 <TextView
                     android:id="@+id/tvBio"
@@ -92,7 +112,19 @@
                     android:text=""
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    app:layout_constraintTop_toBottomOf="@+id/lblBio" />
+
+
+                <TextView
+                    android:id="@+id/lblUrl"
+                    style="@style/GithubUserSearch.Headline2"
+                    android:layout_width="0dp"
+                    android:text="@string/text_Url"
+                    android:layout_marginTop="@dimen/size_16"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvBio" />
 
 
                 <TextView
@@ -100,10 +132,11 @@
                     style="@style/GithubUserSearch.OverviewText"
                     android:layout_width="0dp"
                     android:autoLink="all"
+                    android:textColor="@color/assistiveColor"
                     android:layout_height="wrap_content"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvBio" />
+                    app:layout_constraintTop_toBottomOf="@+id/lblUrl" />
 
                 <View
                     android:id="@+id/divider"
@@ -117,12 +150,24 @@
 
                 <TextView
                     android:id="@+id/tvFollowersAndFollowing"
-                    style="@style/GithubUserSearch.StatusText"
+                    style="@style/GithubUserSearch.Headline2"
                     android:layout_width="0dp"
                     android:text=""
+                    android:layout_marginTop="@dimen/size_8"
                     android:layout_height="wrap_content"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/divider"
+                    app:layout_constraintBottom_toTopOf="@+id/tvReposAndGists"/>
+
+                <TextView
+                    android:id="@+id/tvReposAndGists"
+                    style="@style/GithubUserSearch.Headline2"
+                    android:layout_width="0dp"
+                    android:text=""
+                    android:layout_marginTop="@dimen/size_8"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvFollowersAndFollowing"
                     app:layout_constraintBottom_toTopOf="@+id/ivLocation"/>
 
 
@@ -136,7 +181,7 @@
                     android:src="@drawable/ic_location"
                     app:layout_constraintEnd_toStartOf="@+id/tvLocation"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tvFollowersAndFollowing" />
+                    app:layout_constraintTop_toBottomOf="@+id/tvReposAndGists" />
 
                 <TextView
                     android:id="@+id/tvLocation"
@@ -147,7 +192,7 @@
                     app:layout_constraintBottom_toBottomOf="@id/ivLocation"
                     app:layout_constraintStart_toEndOf="@+id/ivLocation"
                     app:layout_constraintTop_toTopOf="@+id/ivLocation"
-                    tools:text="3/10" />
+                    tools:text="Netherlands" />
 
                 <ImageView
                     android:id="@+id/ivEmail"
@@ -170,7 +215,30 @@
                     app:layout_constraintBottom_toBottomOf="@id/ivEmail"
                     app:layout_constraintStart_toEndOf="@+id/ivEmail"
                     app:layout_constraintTop_toTopOf="@+id/ivEmail"
-                    tools:text="" />
+                    tools:text="john@gmail.com" />
+
+                <ImageView
+                    android:id="@+id/ivTwitter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/size_8"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:src="@drawable/ic_twitter"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tvEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/ivEmail" />
+
+                <TextView
+                    android:id="@+id/tvTwiiter"
+                    style="@style/GithubUserSearch.Body1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/size_8"
+                    app:layout_constraintBottom_toBottomOf="@id/ivTwitter"
+                    app:layout_constraintStart_toEndOf="@+id/ivTwitter"
+                    app:layout_constraintTop_toTopOf="@+id/ivTwitter"
+                    tools:text="monatheoctocat" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

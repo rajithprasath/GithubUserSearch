@@ -43,6 +43,10 @@ class UserDetailFragment : Fragment() {
         val username = args.login
         fetchUserDetails(username)
         detailToolbar.setNavigationOnClickListener { findNavController().navigateUp() }
+
+        ibFav.setOnClickListener {
+            ibFav.setImageResource(R.drawable.ic_favorite)
+        }
     }
 
     private fun fetchUserDetails(username: String) {
@@ -74,7 +78,14 @@ class UserDetailFragment : Fragment() {
             .apply(RequestOptions.circleCropTransform())
             .into(ivAvatar)
         tbName.title = userInfo.name ?: userInfo.login
-        tvBio.text = userInfo.bio
+
+        if(userInfo.bio == null){
+            lblBio.visibility = View.GONE
+            tvBio.visibility = View.GONE
+        }else{
+            tvBio.text = userInfo.bio
+        }
+
         tvUrl.text = userInfo.url
         val followerCount = getString(
             R.string.text_followers_and_followings,
@@ -82,8 +93,23 @@ class UserDetailFragment : Fragment() {
             userInfo.following?.toString()
         );
         tvFollowersAndFollowing.text = followerCount
+
+        val reposCount = getString(
+            R.string.text_repos_and_gists,
+            userInfo.public_repos?.toString(),
+            userInfo.public_gists?.toString()
+        );
+        tvReposAndGists.text = reposCount
+
         tvLocation.text = userInfo.location ?: getString(R.string.text_not_valid)
         tvEmail.text = userInfo.email ?: getString(R.string.text_not_valid)
+
+        if(userInfo.twitter_username == null){
+            ivTwitter.visibility = View.GONE
+            tvTwiiter.visibility = View.GONE
+        }else{
+            tvTwiiter.text = userInfo.twitter_username
+        }
     }
 
 

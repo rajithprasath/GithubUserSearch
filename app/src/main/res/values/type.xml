@@ -30,8 +30,8 @@
     <!-- DetailFragment - overview -->
     <style name="GithubUserSearch.OverviewText" parent="TextAppearance.MaterialComponents.Body1">
         <item name="fontFamily">@font/poppins</item>
-        <item name="android:textSize">18sp</item>
-        <item name="android:textColor">@color/textSecondaryColor</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
     <style name="GithubUserSearch.TagLineText" parent="TextAppearance.MaterialComponents.Body1">
@@ -40,7 +40,7 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
-    <style name="GithubUserSearch.StatusText" parent="TextAppearance.MaterialComponents.Body1">
+    <style name="GithubUserSearch.Headline2" parent="TextAppearance.MaterialComponents.Body1">
         <item name="fontFamily">@font/poppins_bold</item>
         <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/assistiveColor</item>

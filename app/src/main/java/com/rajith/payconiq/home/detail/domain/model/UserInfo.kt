@@ -29,7 +29,7 @@ data class UserInfo(
     val site_admin: Boolean,
     val starred_url: String,
     val subscriptions_url: String,
-    val twitter_username: String,
+    val twitter_username: String?,
     val type: String,
     val updated_at: String,
     val url: String
