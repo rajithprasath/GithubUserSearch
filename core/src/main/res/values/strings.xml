@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_error_internet_connection">Please check your network connectivity.</string>
+    <string name="text_retry">Retry</string>
+    <string name="text_placeholder">You can search for github users by typing the username in the above search bar</string>
+</resources>

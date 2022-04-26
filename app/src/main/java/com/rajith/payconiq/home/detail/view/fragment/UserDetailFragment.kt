@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -60,7 +61,8 @@ class UserDetailFragment : Fragment() {
                     is Resource.Error -> {
                         progressBar.visibility = View.GONE
                         userInfoResponse.message?.let { message ->
-
+                            Toast.makeText(activity, message, Toast.LENGTH_SHORT)
+                                .show()
                         }
                     }
                     is Resource.Loading -> {
@@ -83,7 +85,7 @@ class UserDetailFragment : Fragment() {
             lblBio.visibility = View.GONE
             tvBio.visibility = View.GONE
         }else{
-            tvBio.text = userInfo.bio
+            tvBio.text = userInfo.bio?.trim()
         }
 
         tvUrl.text = userInfo.url
