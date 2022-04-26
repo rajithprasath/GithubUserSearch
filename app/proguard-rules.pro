@@ -19,3 +19,6 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+-keep public class com.rajith.payconiq.home.detail.domain.model.UserInfo
+-keep public class com.rajith.payconiq.home.search.domain.model.** { *; }
