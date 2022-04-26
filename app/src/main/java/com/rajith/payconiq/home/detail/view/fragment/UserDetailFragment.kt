@@ -89,16 +89,16 @@ class UserDetailFragment : Fragment() {
         tvUrl.text = userInfo.url
         val followerCount = getString(
             R.string.text_followers_and_followings,
-            userInfo.followers?.toString(),
-            userInfo.following?.toString()
-        );
+            userInfo.followers.toString(),
+            userInfo.following.toString()
+        )
         tvFollowersAndFollowing.text = followerCount
 
         val reposCount = getString(
             R.string.text_repos_and_gists,
-            userInfo.public_repos?.toString(),
-            userInfo.public_gists?.toString()
-        );
+            userInfo.public_repos.toString(),
+            userInfo.public_gists.toString()
+        )
         tvReposAndGists.text = reposCount
 
         tvLocation.text = userInfo.location ?: getString(R.string.text_not_valid)
